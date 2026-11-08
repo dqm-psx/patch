@@ -1,0 +1,54 @@
+name: Report a patch bug
+description: Report a problem playing the Dragon Quest Monsters 1 & 2 English patch.
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Patch version
+      placeholder: v1.0.73
+    validations:
+      required: true
+  - type: dropdown
+    id: campaign
+    attributes:
+      label: Campaign or mode
+      options:
+        - Terry
+        - Cobi
+        - Tara
+        - Title screen or two-player Colosseum
+        - Other or unsure
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Device and emulator or console
+      description: Include your operating system and emulator version, or your PlayStation hardware.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Where and how does the problem happen?
+      description: Include the location, story progress, and steps another player can follow.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Describe what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repeatability
+    attributes:
+      label: Repeatability and settings
+      description: Does it repeat after a fresh boot and loading a normal memory-card save? Mention cheats or non-default settings.
+  - type: textarea
+    id: files
+    attributes:
+      label: Screenshots or save files
+      description: A screenshot or a memory-card save from before the problem helps. For a freeze or crash, a save state from the same patch version also helps. ZIP save files before attaching them.

@@ -2,7 +2,7 @@
 
 Unofficial English fan translation for the Japanese PlayStation collection, covering Terry’s, Cobi’s, and Tara’s adventures.
 
-**[Download the latest patch — v1.0.73](https://github.com/dqm-psx/patch/releases/tag/v1.0.73)** · [All releases](https://github.com/dqm-psx/patch/releases) · [Report a bug](https://github.com/dqm-psx/patch/issues/new)
+**[Download the latest patch](https://github.com/dqm-psx/patch/releases/latest)** · [All releases](https://github.com/dqm-psx/patch/releases) · [Report a bug](https://github.com/dqm-psx/patch/issues/new?template=bug-report.yml)
 
 The ZIP contains the BPS patch, matching CUE, and original README. No game image or BIOS is included.
 
@@ -22,12 +22,12 @@ The patch also includes restored monster table conversations and special dungeon
 1. Supply an unmodified Japanese **SLPM-87050 BIN**:
    - Size: **260,975,568 bytes**
    - SHA-256: `a1217657786430ac1c3ad71f16cdadb65d47b0df9a7e30278900651c1f1eec29`
-2. Download and extract `DQM1-2-English-v1.0.73-public.zip`.
+2. Download and extract the ZIP from the release you want to play.
 3. Apply its BPS patch to the original Japanese BIN with a BPS patcher such as [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/). Keep checksum validation enabled.
-4. Name the patched image `DQM1-2-English-v1.0.73.bin`, place it beside the included CUE, and open the CUE in your PlayStation emulator.
+4. Give the patched image the BIN filename specified in that release’s README, place it beside the included CUE, and open the CUE in your PlayStation emulator.
 5. When updating, back up your memory-card saves, patch a clean Japanese image, boot fresh, and load an in-game memory-card save. Do not patch an already translated image or resume a save state from another patch version.
 
-Current ZIP: **7,558,537 bytes**. SHA-256:
+The v1.0.73 ZIP is **7,558,537 bytes** and has this SHA-256. Each release includes its own checksum attachment.
 
 ```text
 652ae16c06cc2291495b592bde5a2737e68e483879b4dc684ed4d58a56e1493a
