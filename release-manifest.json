@@ -12,7 +12,7 @@
       "bytes": 2730731,
       "sha256": "e86206ad23199a0b2af852be3f699e0a29559f7fdbf91e6740c6e71dc037065f",
       "sourcePath": "Archive/DQM1-2-English-v1.0.23-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-1a65cb58352fa82b3188/DQM1-2-English-v1.0.23-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/release/DQM1-2-English-v1.0.23-beta-public.zip"
     },
     {
       "version": "1.0.30",
@@ -22,7 +22,7 @@
       "bytes": 2720852,
       "sha256": "d081e46fafc5571585b8b5022ff20359bb4df408e55e38c6730e5cd686c0c498",
       "sourcePath": "Archive/DQM1-2-English-v1.0.30-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-c2e5e0cc8dbb7a4bff75/DQM1-2-English-v1.0.30-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.30-beta/DQM1-2-English-v1.0.30-beta-public.zip"
     },
     {
       "version": "1.0.34",
@@ -32,7 +32,7 @@
       "bytes": 2721081,
       "sha256": "a01e10e5522cbde8848b053946642e2a15813e68be11df69955a0da8d5723565",
       "sourcePath": "Archive/DQM1-2-English-v1.0.34-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-e42c42704c7c28b4e24a/DQM1-2-English-v1.0.34-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.34-beta/DQM1-2-English-v1.0.34-beta-public.zip"
     },
     {
       "version": "1.0.36",
@@ -42,7 +42,7 @@
       "bytes": 2721497,
       "sha256": "5dc9347190b67c8ff09e5d0468bf9dd1370c32e68f489000f128e8b8299fd111",
       "sourcePath": "Archive/DQM1-2-English-v1.0.36-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-5dd81f1bf41498608d08/DQM1-2-English-v1.0.36-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.36-beta/DQM1-2-English-v1.0.36-beta-public.zip"
     },
     {
       "version": "1.0.38",
@@ -52,7 +52,7 @@
       "bytes": 2753630,
       "sha256": "fb083e65bf8993e23c39c025119be7085de348acaa95af97cfa385882ac00d3c",
       "sourcePath": "Archive/DQM1-2-English-v1.0.38-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-0cf43e873f5827982010/DQM1-2-English-v1.0.38-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.38-beta/DQM1-2-English-v1.0.38-beta-public.zip"
     },
     {
       "version": "1.0.45",
@@ -62,7 +62,7 @@
       "bytes": 2753714,
       "sha256": "0c92309bf7e40c9c599cf2d78119a9998e563570fa23db31fac8d75593d0f396",
       "sourcePath": "Archive/DQM1-2-English-v1.0.45-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-309f9231cbe25aca5e2f/DQM1-2-English-v1.0.45-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.45-beta/DQM1-2-English-v1.0.45-beta-public.zip"
     },
     {
       "version": "1.0.46",
@@ -72,7 +72,7 @@
       "bytes": 2754500,
       "sha256": "545f90507790cca2342b7a9cc57661763323334661e68921fc211e1ed0130759",
       "sourcePath": "Archive/DQM1-2-English-v1.0.46-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-8fdeba5f9fd70c13c2e2/DQM1-2-English-v1.0.46-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.46-beta/DQM1-2-English-v1.0.46-beta-public.zip"
     },
     {
       "version": "1.0.48",
@@ -82,7 +82,7 @@
       "bytes": 9929872,
       "sha256": "9d0de9006db12526b8251a710c53e31425ee6738ae5fa18e586823a18b4e4271",
       "sourcePath": "Archive/DQM1-2-English-v1.0.48-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-79f98825a011b845906b/DQM1-2-English-v1.0.48-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.48-beta/DQM1-2-English-v1.0.48-beta-public.zip"
     },
     {
       "version": "1.0.49",
@@ -92,7 +92,7 @@
       "bytes": 9927900,
       "sha256": "ffd41012f075925e8eb2614089d8cc97c9aa75eb7035a99a0697a23d57586fb9",
       "sourcePath": "Archive/DQM1-2-English-v1.0.49-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-1dfb090e98fc8586dfb6/DQM1-2-English-v1.0.49-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.49-beta/DQM1-2-English-v1.0.49-beta-public.zip"
     },
     {
       "version": "1.0.51",
@@ -102,7 +102,7 @@
       "bytes": 9996522,
       "sha256": "8118b6118d97d851f8bb5e25969a3e6dd44824fb02dc34ce5b76c65242812be6",
       "sourcePath": "Archive/DQM1-2-English-v1.0.51-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-08a9a5f7cc00d50fa27c/DQM1-2-English-v1.0.51-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.51-beta/DQM1-2-English-v1.0.51-beta-public.zip"
     },
     {
       "version": "1.0.52",
@@ -112,7 +112,7 @@
       "bytes": 9996655,
       "sha256": "32dec841faa4746ebbf338097be6ebe0b59387a4226d15aa388546aa76a18192",
       "sourcePath": "Archive/DQM1-2-English-v1.0.52-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-f2b75c0139b790105d43/DQM1-2-English-v1.0.52-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.52-beta/DQM1-2-English-v1.0.52-beta-public.zip"
     },
     {
       "version": "1.0.53",
@@ -122,7 +122,7 @@
       "bytes": 10052014,
       "sha256": "e0c86dc16914a50ce697e24b8de78bfcd7ed6b2480b18235f76ce853a6ff6e5e",
       "sourcePath": "Archive/DQM1-2-English-v1.0.53-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-aa4ca274ed46e3a56a9e/DQM1-2-English-v1.0.53-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.53-beta/DQM1-2-English-v1.0.53-beta-public.zip"
     },
     {
       "version": "1.0.55",
@@ -132,7 +132,7 @@
       "bytes": 10052095,
       "sha256": "38d5d7683ab113211a2465288b2fa1f4e5fb682910e692ce8dead6e6f90e19ba",
       "sourcePath": "Archive/DQM1-2-English-v1.0.55-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-7fc0672c85474a7d9208/DQM1-2-English-v1.0.55-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.55-beta/DQM1-2-English-v1.0.55-beta-public.zip"
     },
     {
       "version": "1.0.57",
@@ -142,7 +142,7 @@
       "bytes": 10051764,
       "sha256": "d6722a629d051c56c601218c7ddcd98eba1d0a008023313aab34943fb2282a02",
       "sourcePath": "Archive/DQM1-2-English-v1.0.57-beta-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-dd8a7eeda5922f149100/DQM1-2-English-v1.0.57-beta-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.57-beta/DQM1-2-English-v1.0.57-beta-public.zip"
     },
     {
       "version": "1.0.59",
@@ -152,7 +152,7 @@
       "bytes": 10051844,
       "sha256": "1d9b9079dac756b6711b557fa827d8f3404281d744bd6ab1644e81b19bcd30cc",
       "sourcePath": "Archive/DQM1-2-English-v1.0.59-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-c6af704363c706c96bd5/DQM1-2-English-v1.0.59-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.59/DQM1-2-English-v1.0.59-public.zip"
     },
     {
       "version": "1.0.60",
@@ -162,7 +162,7 @@
       "bytes": 9956303,
       "sha256": "3c2b935e22470d876132c4950c1777ad710fe5218fbcdf24a5d454f89b4e1d9c",
       "sourcePath": "Archive/DQM1-2-English-v1.0.60-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-c769d73d538d868620c5/DQM1-2-English-v1.0.60-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.60/DQM1-2-English-v1.0.60-public.zip"
     },
     {
       "version": "1.0.62",
@@ -172,7 +172,7 @@
       "bytes": 7738967,
       "sha256": "91076a8a6e9c5d9bf930c38a1348b28f8ee3a6e288a94e8828c4677a2653c322",
       "sourcePath": "Archive/DQM1-2-English-v1.0.62-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-b4604b0bfafa9c659af9/DQM1-2-English-v1.0.62-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.62/DQM1-2-English-v1.0.62-public.zip"
     },
     {
       "version": "1.0.63",
@@ -182,7 +182,7 @@
       "bytes": 7355514,
       "sha256": "1086e2b5fcd27482aad3dfa475741105c59eb9d8543d319d320efc7fda6fe184",
       "sourcePath": "Archive/DQM1-2-English-v1.0.63-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-3425a68dbb9d29d4251c/DQM1-2-English-v1.0.63-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.63/DQM1-2-English-v1.0.63-public.zip"
     },
     {
       "version": "1.0.64",
@@ -192,7 +192,7 @@
       "bytes": 7356016,
       "sha256": "ff5e8cac0253ddb37639f9d9b24993976679fc98afdc1d36f72c77d3b0362ac6",
       "sourcePath": "Archive/DQM1-2-English-v1.0.64-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-2f7ed34db4d692e4a307/DQM1-2-English-v1.0.64-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.64/DQM1-2-English-v1.0.64-public.zip"
     },
     {
       "version": "1.0.65",
@@ -202,7 +202,7 @@
       "bytes": 7356145,
       "sha256": "61dd3bd6601ae642cfeadb12539256a9d8d3424730a3b666159ac70ac39c918f",
       "sourcePath": "Archive/DQM1-2-English-v1.0.65-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-466e1233712d89c1db12/DQM1-2-English-v1.0.65-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.65/DQM1-2-English-v1.0.65-public.zip"
     },
     {
       "version": "1.0.66",
@@ -212,7 +212,7 @@
       "bytes": 7356461,
       "sha256": "15e2d4e2c16583b557e0055f6dc4cb677a93dc3c015d97cf5ff84d8a67c40369",
       "sourcePath": "Archive/DQM1-2-English-v1.0.66-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-cee38ce7269d61f9e2f2/DQM1-2-English-v1.0.66-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.66/DQM1-2-English-v1.0.66-public.zip"
     },
     {
       "version": "1.0.67",
@@ -222,7 +222,7 @@
       "bytes": 7357141,
       "sha256": "ef0140aec93a8e01891b7e1037e5e5eab9622c5957415531f6b9aab61bc830ae",
       "sourcePath": "Archive/DQM1-2-English-v1.0.67-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-2c9650864b3a09449b2c/DQM1-2-English-v1.0.67-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.67/DQM1-2-English-v1.0.67-public.zip"
     },
     {
       "version": "1.0.68",
@@ -232,7 +232,7 @@
       "bytes": 7357317,
       "sha256": "0859c0588a4863960949f46c5e2bfbadba84ae6619370dcdbb623ef6f06034dc",
       "sourcePath": "Archive/DQM1-2-English-v1.0.68-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-e8a3216c1d0a1bd65c78/DQM1-2-English-v1.0.68-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.68/DQM1-2-English-v1.0.68-public.zip"
     },
     {
       "version": "1.0.69",
@@ -242,7 +242,7 @@
       "bytes": 7354648,
       "sha256": "2e1f3ac4a42c8521a987d7caf51f72a26fd70b5f9295139c53eb343d017f1d41",
       "sourcePath": "Archive/DQM1-2-English-v1.0.69-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-d8209308cea90b36f0b0/DQM1-2-English-v1.0.69-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.69/DQM1-2-English-v1.0.69-public.zip"
     },
     {
       "version": "1.0.70",
@@ -252,7 +252,7 @@
       "bytes": 7357673,
       "sha256": "924bf750f84130bd974835fe534d56b8d69ba512e49e7730f0dcad34cb1a87fc",
       "sourcePath": "Archive/DQM1-2-English-v1.0.70-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-86940c038bb0aebef0ca/DQM1-2-English-v1.0.70-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.70/DQM1-2-English-v1.0.70-public.zip"
     },
     {
       "version": "1.0.71",
@@ -262,7 +262,7 @@
       "bytes": 7521432,
       "sha256": "26c24b52966c44da2e7463a375225435b27a5ea7d37559f990a7055b38343022",
       "sourcePath": "Archive/DQM1-2-English-v1.0.71-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-b3c3619d3154e6015e07/DQM1-2-English-v1.0.71-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.71/DQM1-2-English-v1.0.71-public.zip"
     },
     {
       "version": "1.0.72",
@@ -272,7 +272,7 @@
       "bytes": 7521723,
       "sha256": "0e49542b40eb5a35859566980fbb30e53247912169983abe8f66de659155e082",
       "sourcePath": "DQM1-2-English-v1.0.72-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-402af1ccc6bcbaca72a8/DQM1-2-English-v1.0.72-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.72/DQM1-2-English-v1.0.72-public.zip"
     },
     {
       "version": "1.0.73",
@@ -282,7 +282,7 @@
       "bytes": 7558537,
       "sha256": "652ae16c06cc2291495b592bde5a2737e68e483879b4dc684ed4d58a56e1493a",
       "sourcePath": "DQM1-2-English-v1.0.73-public.zip",
-      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/untagged-ea65c6244c5b435fc293/DQM1-2-English-v1.0.73-public.zip"
+      "downloadUrl": "https://github.com/dqm-psx/patch/releases/download/v1.0.73/DQM1-2-English-v1.0.73-public.zip"
     }
   ]
 }

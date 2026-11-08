@@ -41,6 +41,8 @@ Use the [translation comparison](https://dqm-psx.github.io/translations/) for wo
 
 ## Release archive
 
+Future English patches will be published in [dqm-psx/patch Releases](https://github.com/dqm-psx/patch/releases/latest). Download the ZIP attached to the release you want to play. The [original release notes](README.txt) and [archived packages](Archive/) are also available in this repository.
+
 This repository hosts 28 existing packages copied from [`phakic/DQM-1-2-PSX-translation`](https://github.com/phakic/DQM-1-2-PSX-translation), including its `Archive` folder. Every ZIP is unchanged and was verified against its source Git blob and SHA-256. Original package READMEs and credits are preserved. Original release notes are retained where present; other versions are identified as historical packages. Beta packages remain marked as beta in their names.
 
 [`release-manifest.json`](release-manifest.json) records the source snapshot, filenames, sizes, SHA-256 values, and destination links. Each release includes a checksum file; historical checksum files were added during copying. The v1.0.73 checksum attachment is an unchanged copy of the source attachment.
