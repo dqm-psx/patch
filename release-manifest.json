@@ -1,7 +1,5 @@
 {
   "schemaVersion": 1,
-  "sourceRepository": "phakic/DQM-1-2-PSX-translation",
-  "sourceCommit": "a7fceac606697df0a7ea3a1ee7ca2efb6d682699",
   "destinationRepository": "dqm-psx/patch",
   "releases": [
     {
