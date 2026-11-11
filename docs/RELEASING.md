@@ -86,3 +86,8 @@ When that secret is absent, the Actions summary explains that the website's
 scheduled check runs every six hours. The website can also be refreshed using
 its manual workflow. Website deployment follows its existing Pages
 configuration and the owner's launch approval.
+
+The homepage importer checks downloads without release-asset credentials, as a
+visitor would. Automatic import therefore needs public release downloads.
+While this repository is private, review new packages using the preparation
+command's local homepage preview. Changing visibility remains a launch decision.
