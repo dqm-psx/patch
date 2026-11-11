@@ -1,0 +1,79 @@
+name: Report a patch bug
+description: Report a reproducible problem with the English patch.
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Patch version
+      placeholder: v1.0.73
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Patch edition
+      options:
+        - Enhanced
+        - Translation only
+        - Earlier release or unknown
+        - Custom build
+    validations:
+      required: true
+  - type: textarea
+    id: build_record
+    attributes:
+      label: Build record
+      description: If your package includes BUILD.json, paste its contents here or attach it in a ZIP under Screenshots and saves below. A build ID is also helpful.
+      render: json
+  - type: dropdown
+    id: campaign
+    attributes:
+      label: Adventure
+      options:
+        - Terry
+        - Cobi
+        - Tara
+        - Title screen or two-player Colosseum
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Emulator or hardware
+      description: Include emulator and version or console hardware, device and operating system, and any cheats or non-default settings.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include location and story progress.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Describe what should happen and what happened instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: fresh_boot
+    attributes:
+      label: Does it repeat after a fresh boot from an in-game memory-card save?
+      options:
+        - "Yes"
+        - "No"
+        - Have not tried
+    validations:
+      required: true
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Screenshots and saves
+      description: Attach screenshots or video and a memory-card save from just before the issue if available. A save state from the affected patch version, before or during the issue, can also help.
