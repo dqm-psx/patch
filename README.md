@@ -2,31 +2,14 @@
 
 Unofficial English fan translation for the Japanese PlayStation collection, covering Terry’s, Cobi’s, and Tara’s adventures.
 
-<!-- latest-release:begin -->
-## Latest release — v1.0.73
+## Latest release
 
-[Release notes and downloads](https://github.com/dqm-psx/patch/releases/tag/v1.0.73)
+[Download the latest release](https://github.com/dqm-psx/patch/releases/latest)
 
-- **[English patch](https://github.com/dqm-psx/patch/releases/download/v1.0.73/DQM1-2-English-v1.0.73-public.zip)** · 7.56 MB — BPS patch, matching CUE, and release README.
+- **Enhanced** — English translation and bug fixes, with quality-of-life improvements, restored content, and added features.
+- **Translation only** — The same English translation and bug fixes, without the optional additions.
 
-### Changes
-
-- Running and movement settings in all three adventures, with independent walking and R1 speeds, Hold or Toggle running, and saved preferences.
-- Time and Distance encounter options let you choose how movement speed affects random battles.
-- Two-player Colosseum Local Rules and optional monster wagers. Transfers save both Adventure Logs, so keep both cards inserted and the game running until both saves finish.
-- Updated dialogue font, monster names and nicknames, reduced memory use, and fixes for battle loading, graphics, and walking sprites. Existing saved nicknames stay unchanged.
-
-<details>
-<summary>ZIP checksums</summary>
-
-`DQM1-2-English-v1.0.73-public.zip`
-
-```text
-652ae16c06cc2291495b592bde5a2737e68e483879b4dc684ed4d58a56e1493a
-```
-
-</details>
-<!-- latest-release:end -->
+Release notes and checksums accompany each download. See the [project website](https://dqm-psx.github.io/) for installation help and feature explanations.
 
 ## Install or update
 

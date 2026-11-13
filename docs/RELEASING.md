@@ -38,9 +38,16 @@ a new patch package.
 
 ## Automatic updates
 
-The Update release information workflow runs on stable release publication,
-release edits, or a manual run. It follows GitHub Latest and updates this
-repository's README with verified downloads and release notes.
+The Verify release and notify website workflow runs on stable release publication,
+release edits, or a manual run. It validates GitHub Latest and puts verified
+downloads, notes, and checksums in the Actions summary. It never commits to this
+repository, so releasing a patch does not need a README pull request or a branch
+protection exception. Its repository permission is Contents read.
+
+The README links directly to GitHub Latest and describes the two editions.
+Version-specific details live in Releases and on the homepage. For a local
+read-only check, run `python tools/update_release_readme.py`; add `--summary-only`
+to print the detailed summary. The helper does not modify the README.
 
 The homepage independently verifies the packages and renders its reviewed FAQ.
 Missing explanations or invalid packages stop the website update and appear as
