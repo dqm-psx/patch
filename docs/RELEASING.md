@@ -1,93 +1,68 @@
-# Release handoff
+# Releasing a patch
 
-The development builder defines the feature presets, builds both editions, and
-prepares their player-facing explanations. This repository distributes the
-approved packages. The homepage uses their published metadata for its download
-links, edition selector, release notes, and shared feature FAQ.
+Build both editions, review their README and the website preview, then publish
+after the project owner's go-ahead. GitHub Releases here hold the ZIPs;
+GitHub Latest selects the homepage download.
 
-## Prepare a release
+## Prepare and review
 
-Run the development builder's preparation command with the approved version,
-release notes, and the homepage checkout used for the preview.
+In the development checkout, prepare the release with the original Japanese BIN,
+a notes JSON file, the authored README, and the website checkout. The release
+tool's `prepare --help` lists the local paths and options.
 
-    python prepare_release.py "<original Japanese BIN>" --version X.Y.Z --notes release-notes.json --website "<homepage checkout>" --draft
+Enhanced uses the builder's default features. Translation only includes the
+same English translation, required technical support, and original-game fixes.
+Each ZIP contains a BPS, CUE, README.txt, and BUILD.json. Game images are excluded.
 
-The notes file contains a nonempty notes array and a contributors array.
-Preparation builds Enhanced and Translation only together. Enhanced uses the
-builder's default feature set. Translation only includes English translation
-support and original-game bug fixes. The source registry determines those
-selections.
+Review the README text that will be packaged and the rendered local webpage.
+Revise the draft README and notes or edit FAQ wording in the website checkout,
+then refresh the preview. README changes repackage the existing game patches;
+FAQ-only changes leave the ZIPs untouched. Gameplay changes require new builds.
 
-The preparation command produces two ZIPs, release.json, and SHA256SUMS.txt, then
-creates a draft release in dqm-psx/patch. Each ZIP contains its BPS, matching CUE,
-README.txt, and BUILD.json. The build record identifies the version, edition,
-selected features, text and font choices, and source/output image checksums.
+The generated README appendix identifies the edition, filenames, original and
+patched image checksums, and patch checksum. SHA256SUMS.txt records the final
+ZIP and release.json hashes. A ZIP cannot contain its own final checksum.
 
-Review the rendered homepage preview and both packages before publishing the
-draft. The first two-edition release begins with the next approved version.
-Archived releases retain their original packages.
+## Publish
 
-To retry uploading an already prepared bundle, use:
+After approval, publish the reviewed bundle as a stable GitHub Release and ship
+the reviewed FAQ updates to the website. Routine releases do not require a
+specific PR or a separate approval in every repository. Code changes can still
+use PRs normally.
 
-    python prepare_release.py --release-dir "<bundle>" --website "<homepage checkout>" --draft
+Publication validates the reviewed files and hashes, uploads through an internal
+GitHub draft, marks the release Latest, and verifies its assets. It never
+replaces an existing published ZIP. Matching interrupted uploads can be retried.
+After release, FAQ corrections are ordinary website edits and do not require
+a new patch package.
 
-Preparation keeps a feature's recorded introduction version when it reads a
-previous published catalog. For offline preparation after the first catalog
-release, supply that catalog using --previous-release. Draft preparation can
-retrieve the published catalog automatically.
+## Automatic updates
 
-## Public release metadata
+The Update release information workflow runs on stable release publication,
+release edits, or a manual run. It follows GitHub Latest and updates this
+repository's README with verified downloads and release notes.
 
-release.json is schema version 2. Its version matches the vMAJOR.MINOR.PATCH
-release tag. The two edition IDs are enhanced and translation-only, displayed
-as Enhanced and Translation only. Each package is named
-DQM1-2-English-vVERSION-EDITION.zip.
+The homepage independently verifies the packages and renders its reviewed FAQ.
+Missing explanations or invalid packages stop the website update and appear as
+errors in Actions. Edition selection changes downloads, not the shared FAQ.
 
-The catalog records the original image identity, release notes, contributor
-names, both package sizes and SHA-256 checksums, and both build records. Its
-feature definitions provide stable IDs, names, categories, dependencies, and
-known introduction versions. Its FAQ entries provide stable answer IDs,
-questions, explanations, and feature references.
+The homepage checks for new releases every six hours. Its build workflow can
+also be run immediately from Actions. If WEBSITE_DISPATCH_TOKEN is configured
+here with access to the website dispatch endpoint, the release workflow sends
+an immediate patch-release notification. No additional secret is required for
+the scheduled check.
 
-The main FAQ describes all released features. Selecting a download edition
-changes its download information. New explanations and revisions are prepared
-with the release so the website can publish them together with the packages.
+## Files and archive
 
-The release assets are the authoritative download packages. The root
-release-manifest.json documents the historical archive. README.txt and Archive/
-retain the original archived release material.
+Each new release contains two edition ZIPs, release.json (schema version 2), and
+SHA256SUMS.txt. Package names use DQM1-2-English-vVERSION-EDITION.zip, with
+edition IDs enhanced and translation-only.
 
-## After publication
+The catalog records notes, credits, package hashes, build records, feature IDs,
+and initial feature explanations. The website maintains reviewed FAQ wording
+independently. The builder chooses features; the website displays the recorded
+choices.
 
-The Update release information workflow runs when a stable release is published
-or edited, and can also be run manually from Actions. It queries GitHub's Latest
-release so an older maintenance release cannot take over the homepage merely
-because it triggered the workflow. An intentional Latest rollback is supported.
-
-The workflow verifies the uploaded release.json against GitHub's byte count and
-SHA-256, checks the two package identities against the uploaded assets, and
-requires a FAQ explanation for every feature before updating the README.
-The homepage performs its own full package and content validation. Incomplete
-release information fails the update and reports the missing or invalid data
-in Actions.
-
-The current single-edition archive remains supported through its recorded
-filenames and checksums. New releases need the complete schema version 2
-catalog.
-
-The workflow can notify dqm-psx/dqm-psx.github.io with the patch-release
-repository_dispatch event. For immediate notification, configure the
-WEBSITE_DISPATCH_TOKEN Actions secret in this repository using a credential
-authorized for the website repository's dispatch endpoint. A fine-grained
-token needs Contents write access to that website repository. The token is used
-only by the notification step.
-
-When that secret is absent, the Actions summary explains that the website's
-scheduled check runs every six hours. The website can also be refreshed using
-its manual workflow. Website deployment follows its existing Pages
-configuration and the owner's launch approval.
-
-The homepage importer checks downloads without release-asset credentials, as a
-visitor would. Automatic import therefore needs public release downloads.
-While this repository is private, review new packages using the preparation
-command's local homepage preview. Changing visibility remains a launch decision.
+Historical releases retain their original files and hashes. release-manifest.json
+documents the older archive, with original packages and notes also retained in
+Archive/ and README.txt.
