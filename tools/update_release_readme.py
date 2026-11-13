@@ -1,5 +1,6 @@
-"""Refresh the public README from GitHub's published Latest release."""
+"""Validate GitHub's published Latest release and summarize its downloads."""
 
+import argparse
 import hashlib
 import json
 import os
@@ -13,7 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'dqm-psx/patch'
 API = 'https://api.github.com/repos/' + REPOSITORY
 PUBLIC = 'https://github.com/' + REPOSITORY
-START, END = '<!-- latest-release:begin -->', '<!-- latest-release:end -->'
 VERSION = re.compile(r'(?:0|[1-9][0-9]*)(?:\.(?:0|[1-9][0-9]*)){2}')
 HASH = re.compile(r'[a-f0-9]{64}')
 MAX_METADATA_BYTES = 1_048_576
@@ -226,27 +226,23 @@ def summary(data):
     return '\n'.join(lines)
 
 
-def updated_readme(original, data):
-    if original.count(START) != 1 or original.count(END) != 1 or original.index(START) >= original.index(END):
-        raise ValueError('Expected one ordered pair of README release markers')
-    before, remaining = original.split(START)
-    _, after = remaining.split(END)
-    return before + START + '\n' + summary(data) + END + after
-
-
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--summary-only', action='store_true',
+                        help='Print the verified release details and append them to the Actions summary')
+    args = parser.parse_args(argv)
     release = json.loads(fetch('/releases/latest'))
     archive = json.loads((ROOT / 'release-manifest.json').read_text(encoding='utf-8'))
     data = selected_release(release, archive,
                             lambda asset_id: fetch(f'/releases/assets/{asset_id}', 'application/octet-stream'))
-    path = ROOT / 'README.md'
-    original = path.read_text(encoding='utf-8')
-    rendered = updated_readme(original, data)
-    if rendered != original:
-        path.write_text(rendered, encoding='utf-8', newline='\n')
-        print('README updated to GitHub Latest, v' + data['version'])
-    else:
-        print('README already matches GitHub Latest, v' + data['version'])
+    print('Verified GitHub Latest, v' + data['version'])
+    if args.summary_only:
+        rendered = summary(data)
+        print(rendered)
+        if destination := os.environ.get('GITHUB_STEP_SUMMARY'):
+            with Path(destination).open('a', encoding='utf-8', newline='\n') as output:
+                output.write(rendered + '\n')
+    return data
 
 
 if __name__ == '__main__':

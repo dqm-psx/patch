@@ -1,4 +1,4 @@
-name: Update release information
+name: Verify release and notify website
 
 on:
   release:
@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   update:
@@ -29,18 +29,8 @@ jobs:
         id: latest
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python tools/update_release_readme.py
-      - name: Save the current release information
-        run: |
-          if git diff --quiet -- README.md; then exit 0; fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- README.md
-          git commit -m "Update README from the published Latest release"
-          git push
+        run: python tools/update_release_readme.py --summary-only
       - name: Notify the website
-        # The website validates independently; a concurrent README commit must
-        # not delay a valid release notification until the scheduled check.
         if: ${{ !cancelled() && steps.latest.outcome == 'success' }}
         env:
           GH_TOKEN: ${{ secrets.WEBSITE_DISPATCH_TOKEN }}

@@ -1,7 +1,12 @@
 import copy
+import contextlib
 import hashlib
+import io
 import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 import update_release_readme as readme
 
@@ -60,17 +65,13 @@ class ReleaseSummaryTests(unittest.TestCase):
         return {'tag_name': tag, 'draft': False, 'prerelease': False,
                 'published_at': '2026-11-11T00:00:00Z', 'assets': assets}, raw
 
-    def test_editions_render_with_pinned_downloads_and_preserve_other_readme_content(self):
+    def test_editions_render_with_pinned_downloads(self):
         release, raw = self.release()
         data = readme.selected_release(release, self.archive, lambda identifier: raw)
-        before = 'Intro\n' + readme.START + '\nOld\n' + readme.END + '\nInstall'
-        result = readme.updated_readme(before, data)
-        self.assertTrue(result.startswith('Intro\n'))
-        self.assertTrue(result.endswith('\nInstall'))
+        result = readme.summary(data)
         for edition in self.catalog['editions']:
             self.assertIn('/releases/download/v1.0.74/' + edition['file'], result)
             self.assertIn(edition['name'], result)
-        self.assertNotIn('\nOld\n', result)
 
     def test_missing_feature_explanation_or_edition_holds_the_update(self):
         missing_faq = copy.deepcopy(self.catalog)
@@ -132,7 +133,7 @@ class ReleaseSummaryTests(unittest.TestCase):
             }],
         }
         data = readme.selected_release(release, self.archive, lambda identifier: self.fail('Unexpected fetch'))
-        result = readme.updated_readme(readme.START + 'new version' + readme.END, data)
+        result = readme.summary(data)
         self.assertIn('v1.0.73', result)
         self.assertIn(old['file'], result)
         self.assertNotIn('Translation only', result)
@@ -144,6 +145,49 @@ class ReleaseSummaryTests(unittest.TestCase):
         self.assertNotIn('<script>', result)
         self.assertNotIn('[link]', result)
         self.assertIn('&lt;script&gt;', result)
+
+    def test_check_and_summary_modes_never_modify_readme(self):
+        release, raw = self.release()
+        for arguments in ([], ['--summary-only']):
+            with self.subTest(arguments=arguments), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                original = b'# Latest release\nAn evergreen download link.\n'
+                (root / 'README.md').write_bytes(original)
+                (root / 'release-manifest.json').write_text(json.dumps(self.archive), encoding='utf-8')
+                summary_path = root / 'actions-summary.md'
+                summary_path.write_text('Earlier step\n', encoding='utf-8')
+                output = io.StringIO()
+                with patch.object(readme, 'ROOT', root), \
+                     patch.object(readme, 'fetch', side_effect=[json.dumps(release).encode(), raw]), \
+                     patch.dict(readme.os.environ, {'GITHUB_STEP_SUMMARY': str(summary_path)}), \
+                     contextlib.redirect_stdout(output):
+                    data = readme.main(arguments)
+                self.assertEqual(data['version'], '1.0.74')
+                self.assertEqual((root / 'README.md').read_bytes(), original)
+                self.assertIn('Verified GitHub Latest, v1.0.74', output.getvalue())
+                summary = summary_path.read_text(encoding='utf-8')
+                self.assertTrue(summary.startswith('Earlier step\n'))
+                if arguments:
+                    self.assertIn('/releases/download/v1.0.74/', summary)
+                    self.assertIn('Example release.', summary)
+                else:
+                    self.assertEqual(summary, 'Earlier step\n')
+
+    def test_invalid_release_does_not_emit_a_success_summary(self):
+        release, raw = self.release()
+        release['assets'][1]['digest'] = 'sha256:' + 'c' * 64
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / 'release-manifest.json').write_text(json.dumps(self.archive), encoding='utf-8')
+            summary_path = root / 'actions-summary.md'
+            with patch.object(readme, 'ROOT', root), \
+                 patch.object(readme, 'fetch', side_effect=[json.dumps(release).encode(), raw]), \
+                 patch.dict(readme.os.environ, {'GITHUB_STEP_SUMMARY': str(summary_path)}), \
+                 contextlib.redirect_stdout(io.StringIO()) as output:
+                with self.assertRaisesRegex(ValueError, 'Release asset differs'):
+                    readme.main(['--summary-only'])
+            self.assertEqual(output.getvalue(), '')
+            self.assertFalse(summary_path.exists())
 
 
 if __name__ == '__main__':
