@@ -1,0 +1,53 @@
+name: Update release information
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+
+concurrency:
+  group: release-handoff
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.event_name == 'workflow_dispatch' || (!github.event.release.draft && !github.event.release.prerelease)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check release-summary handling
+        run: python -m unittest discover -s tools -p 'test_*.py'
+      - name: Read the published Latest release
+        id: latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/update_release_readme.py
+      - name: Save the current release information
+        run: |
+          if git diff --quiet -- README.md; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- README.md
+          git commit -m "Update README from the published Latest release"
+          git push
+      - name: Notify the website
+        # The website validates independently; a concurrent README commit must
+        # not delay a valid release notification until the scheduled check.
+        if: ${{ !cancelled() && steps.latest.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ secrets.WEBSITE_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            printf 'Release metadata validated. The website checks for releases every six hours. Configure WEBSITE_DISPATCH_TOKEN to notify it immediately.\n' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          gh api --method POST repos/dqm-psx/dqm-psx.github.io/dispatches -f event_type=patch-release
+          printf 'Notified the website to validate GitHub Latest and rebuild its release information.\n' >> "$GITHUB_STEP_SUMMARY"
